@@ -2,9 +2,9 @@
 ## Table of Contents : 
 1. [Introduction](#Introduction)
 1. [HTML](#HTML)
-    - [Code](#Code)
+    - [Code](#HTML-Code)
 1. [CSS](#CSS)
-    - [Code](#Code)
+    - [Code](#CSS-Code)
     - [Page Layout](#Page-Layout)
     - [Hover](#Hover)
 1. [PHP](#PHP)
@@ -13,7 +13,7 @@
      - [Retrieve Code](#Retrieve-Code)
      - [Retrieve Page](#Retrieve-Page)
 1. [Javascript](#Javascript)
-     - [Code](#Code)
+     - [Code](#JS-Code)
 1. [The Final Output](#The-Final-Output)
 
 ## Introduction
@@ -22,7 +22,7 @@ The second task for the Software Department is to create a web page with five bu
 ## HTML 
 In the html file, I have declared five buttons left, right, forward, backward, and stop and a canvas.
 
-### Code
+### HTML Code
 ```
 <!DOCTYPE html>
 <html lang="en">
@@ -61,7 +61,7 @@ In the html file, I have declared five buttons left, right, forward, backward, a
 ## CSS
 The CSS code is included with the html file. By using CSS, the buttons and canvas were styled and positioned according to their values, with some actions added when the buttons were hovered over.
 
-### Code
+### CSS Code
 ```
         <style>
       * {
