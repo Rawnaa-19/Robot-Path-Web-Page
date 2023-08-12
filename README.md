@@ -301,6 +301,7 @@ else{
 ### Retrieve Page
 The last value stored in the database is left. Therefore, the retrieve code should print out "Left".<br><br>
 <kbd> **Figure 3** <br><br>*Database Last Value*<br><br> <kbd>![image](https://github.com/Rawnaa-19/Robot-Path-Web-Page/assets/106926557/d5db313f-b393-48af-87d9-c5804fd69dbc)</kbd></kbd><br><br>
+
 <kbd> **Figure 4** <br><br>*Last Value Retrieved*<br><br> <kbd>![image](https://github.com/Rawnaa-19/Robot-Path-Web-Page/assets/106926557/c218da62-703a-449e-b415-4d147925afd1)</kbd></kbd>
 ## Javascript
 Javascript here is used to draw on the canvas. The js file is attached under the name "script.js"
