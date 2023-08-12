@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Draw Robot Path</title>
+    <link rel = "icon" href = 
+"https://yt3.googleusercontent.com/ytc/AOPolaRAsVUd0NPDZpII-TSC3t1Tx2annzqCm2Aa8I2e=s900-c-k-c0x00ffffff-no-rj" 
+        type = "image/x-icon">
+    <style>
+      * {
+  box-sizing: border-box;
+}
+      button[value="Stop"] {
+        background-color: #D8AED3;  
+        border: transparent;  
+        margin-left: 80%;
+      }
+      button[value="Delete"] {
+        width: 95px;
+        height: 40px;
+        background-color: transparent;
+        background-image: url('https://img.icons8.com/ios-filled/50/FFFFFF/waste.png');
+        background-size: 17px;
+        background-position-x: 8%;
+        background-position-y: 50%;
+        padding-left: 20%;
+        background-repeat: no-repeat; 
+        border-radius: 8px;
+        color: white;
+        box-shadow: 2px 2px 4px 4px #9182c441;
+        transition: all 0.5s;
+        cursor: pointer;
+        font-family: Georgia, serif;
+        border: #9182C4;
+        font-size: 20px;
+      }
+      button:hover[value="Delete"] {
+        box-sizing: border-box;
+        width: 97px;
+        height: 41px;
+      }
+      button[value="Forward"] , button[value="Stop"] ,button[value="Backward"],button[value="Left"],button[value="Right"]{
+        border-radius: 12px;
+        width: 140px;
+        height: 60px;
+        padding: 3px;
+        color: white;
+       margin-left: 5%;
+        margin-right: 5%;
+        transition: all 0.5s;
+        cursor: pointer;
+        font-size: 20px;
+        font-family: Georgia, serif;
+      }
+
+      button:hover[value="Stop"] {
+        background-color: red;
+        border-color: transparent;
+      }
+
+      button[value="Left"] {
+        background-color: transparent;
+        width: 90px;
+        height: 70px;
+        background-image: url('https://img.icons8.com/ios-filled/50/FFFFFF/sort-left.png');
+        background-size: 70px;
+        background-position-x: 50%;
+        background-position-y: 50%;
+        background-repeat: no-repeat; 
+        border: transparent;
+      }
+      button:hover[value="Left"] {
+        background-position-x: 0%;
+        box-shadow: 4px 4px 14px 8px #9182C4;
+      }
+      button[value="Forward"] {
+        background-color: transparent;
+        width: 90px;
+        height: 70px;
+        background-image: url('https://img.icons8.com/ios-filled/50/FFFFFF/sort-up.png');
+        background-size: 70px;
+        background-position-x: 50%;
+        background-position-y: 50%;
+        background-repeat: no-repeat; 
+        border: transparent;
+        margin-left: 10%;
+      }      
+      button:hover[value="Forward"] {
+        box-shadow: 4px 4px 14px 8px #9182C4;
+      }
+      button:hover[value="Backward"] {
+        box-shadow: 4px 4px 14px 8px #9182C4;
+      }
+      button[value="Backward"] {
+        background-color: transparent;
+        width: 90px;
+        height: 70px;
+        background-image: url('https://img.icons8.com/ios-filled/50/FFFFFF/sort-down.png');
+        background-size: 70px;
+        background-position-x: 50%;
+        background-position-y: 50%;
+        background-repeat: no-repeat; 
+        border: transparent;
+        margin-left: 10%;
+      }
+      button[value="Right"] {
+        background-color: transparent;
+        width: 90px;
+        height: 70px;
+        background-image: url('https://img.icons8.com/ios-filled/50/FFFFFF/sort-right.png');
+        background-size: 70px;
+        background-position-x: 50%;
+        background-position-y: 50%;
+        background-repeat: no-repeat; 
+        font-size: 0;
+        border: transparent;
+
+      }
+      button:hover[value="Right"] {
+        background-position-x: 90%;
+        box-shadow: 4px 4px 14px 8px #9182C4;
+      }
+     
+      body {
+   /* background: linear-gradient(to left,#aea2d6,#aea2d6);*/
+    background-color: #aaa0cb;
+    }
+    canvas {
+        border: 1px solid #9182C4;
+        box-shadow: 4px 4px 14px  #9182C4 , 4px 4px 14px 8px #9182C4;
+        border-radius: 8px;
+      }
+    .gridLayOut2 {
+      display: grid;
+  float: right;
+  width: 50%;
+  margin-top: 5%;
+  grid-template-rows: repeat(4);
+  grid-template-columns: repeat(3);
+  
+        height: 700px;
+        
+    }
+    .gridLayOut1 {
+      display: grid;
+  float: left;
+  width: 40%;
+  margin-left: 2%;
+  margin-top: 2%;
+  grid-template-rows: repeat(2);
+  grid-template-columns: repeat(2);
+    }
+   .span-three{
+      grid-column: 2;
+    }
+   .left{
+     grid-row: 2;
+     grid-column: 1;
+    }
+    .stop {
+      grid-row: 2;
+      grid-column: 2;
+    }
+    .right {
+      grid-row: 2;
+      grid-column: 3;
+    }
+
+    .row:after {
+  content: "";
+  display: table;
+  clear: both;
+  
+}
+.delete {
+    grid-column: 2;
+    margin-top: 50%;
+    margin-left: 30%;
+    }
+.paragraph {
+  grid-column: 2;
+  grid-row: 4;
+
+}
+    </style>
+  </head>
+  <body>
+     <div class="row">
+       <div class="gridLayOut1">
+            
+             <canvas class="column-two" id="canvas" height="650" width="550"></canvas> 
+           <button class="delete" id ="delBtn" onclick="clearCanvas()" type="button" value="Delete">Delete</button>       
+             
+      </div>
+      <div class="gridLayOut2">
+             <button class="span-three" id ="forwardBtn" onclick="drawPath('Forward')" type="button" value="Forward"></button>
+            <button class="left" id ="leftBtn" onclick="drawPath('Left')" type="button"  value="Left"></button>
+            <button class="stop" id ="stopBtn" onclick="drawPath('Stop')" type="button" value="Stop">Stop</button>
+            <button class="right" id ="rightBtn" onclick="drawPath('Right')" type="button" name="button" value="Right"></button>               
+            <button class="span-three" id ="backBtn" onclick="drawPath('Backward')" type="button" name="button" value="Backward"></button>
+      <p id ="status" class="paragraph"></p>
+          </div>
+     
+      </div>        
+ <script src="script.js"> </script>
+          
+
+
+  </body>
+</html>
