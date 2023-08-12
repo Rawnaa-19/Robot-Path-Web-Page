@@ -271,7 +271,7 @@ else{
 ?>
 ```
 ### Database
-I have created a database with one table that has two columns the first column is the id that increaments automatically whenever a new row is added and the second column is the direction.<br><br
+I have created a database with one table that has two columns the first column is the id that increaments automatically whenever a new row is added and the second column is the direction.<br><br>
 
 <kbd> **Figure 2** <br><br>*Database*<br><br> <kbd>![image](https://github.com/Rawnaa-19/Robot-Path-Web-Page/assets/106926557/2d90a730-83a9-4e36-bbac-0706773dcc36)</kbd></kbd>
 
